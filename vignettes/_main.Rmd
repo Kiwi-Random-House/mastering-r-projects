@@ -1,0 +1,23 @@
+--- 
+title:       "Building Analytic Apps with R"
+author:      "Harel Lustiger"
+subtitle:    "Minimize the lifetime cost of the project and maximize data scientists' productivity"
+description: "Performing data analysis in R is the intent behind its creation. This book details an approach for structuring and developing analysis projects in R"
+url:         "https://r-projects.netlify.app/"
+github-repo: "https://github.com/Kiwi-Random-House/R-Projects"
+date:        "`r output_dir`"
+site: bookdown::bookdown_site
+documentclass: book
+# bibliography: [references.bib]
+# biblio-style: apalike
+# link-citations: yes
+graphics: yes
+always_allow_html: yes
+# cover-image: "`r index$cover_image()`"
+# favicon:     "`r index$favicon()`"
+---
+
+PlaceHolder
+
+<!--chapter:end:index.Rmd-->
+

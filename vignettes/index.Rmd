@@ -1,0 +1,21 @@
+---
+title:       "`r read.dcf('../DESCRIPTION', 'Title')[[1]]`"
+author:      "Harel Lustiger"
+subtitle:    "`r read.dcf('../DESCRIPTION', 'Subtitle')[[1]]`"
+description: "`r read.dcf('../DESCRIPTION', 'Description')[[1]]`"
+url:         "https://mastering-r-projects.netlify.app/"
+github-repo: "Kiwi-Random-House/mastering-r-projects"
+date:        "`r format(Sys.Date(), '%B, %Y')`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [../inst/REFERENCES.bib]
+biblio-style: apalike
+link-citations: yes
+graphics: yes
+always_allow_html: yes
+cover-image: "images/cover.png"
+favicon:     "favicon.ico"
+---
+
+```{r child = '001-title_page.Rmd'}
+```

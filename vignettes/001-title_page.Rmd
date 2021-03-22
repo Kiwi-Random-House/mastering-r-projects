@@ -1,0 +1,39 @@
+`r if (knitr::is_latex_output()) '# Title Page {-}'`
+`r if (knitr::is_html_output()) '# Welcome {-}'`
+
+```{r cover-image, cache = FALSE, out.width = "100%"} 
+knitr::include_graphics(usethis::proj_path('vignettes', 'images', 'cover.png'), dpi = NA)
+```
+
+`r if (knitr::is_latex_output()) '<!--'` 
+
+Carrying out a project in R, specifically when the outcome in mind is an analytic application, entails upfront investment. This is especially true if the project needs to be reproducible, collaborative, or frequently change to meet contingency needs. From the outset, the data scientist has to make decisions, willy-nilly, about how to organise the project's scripts, functions, and data in a folder structure that accommodates present and future needs. Furthermore, the data scientist has to choose procedures, workflow, and tools to implement and orchestrate the application's scripts and functions. 
+
+The purpose of this book is twofold. First, to urge data scientists to choose and stick with a thoughtful framework for building analytic applications in R. Second, to inform data scientists about a framework that considers each analytic application as an R package.
+
+## License {-}
+
+This book is licensed to you under [Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International
+License](http://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+The code samples in this book are licensed under [Creative Commons CC0 1.0
+Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/), i.e.
+public domain.
+
+`r if (knitr::is_latex_output()) '-->'`
+
+## Colophon {-}
+
+This version of the book was built with `r R.version.string` and the following
+packages:
+
+```{r colophon, echo = FALSE, results="asis"}
+pkgs <- sessioninfo::package_info(bookdown$get_imports(), dependencies = FALSE)
+df <- data.frame(
+  package = pkgs$package,
+  version = pkgs$ondiskversion,
+  source = gsub("@", "\\\\@", pkgs$source)
+)
+knitr::kable(df, format = "markdown")
+```
