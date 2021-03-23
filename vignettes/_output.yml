@@ -1,0 +1,41 @@
+bookdown::gitbook:
+  # https://bookdown.org/yihui/bookdown/html.html
+  includes:
+    in_header: [google-analytics-otl.html]
+  css: css/style.css
+  split_by: chapter+number
+  split_bib: yes
+  config:
+    toc:
+      collapse: section
+      scroll_highlight: yes
+      before: |
+        <li><a href="./">Building Analytic Apps with R</a></li>
+      after: []
+    toolbar:
+      position: fixed
+    download: ["pdf"]
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: no
+      github: yes
+      twitter: yes
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: []
+    info: no
+
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: no
+  
+bookdown::epub_book: default
