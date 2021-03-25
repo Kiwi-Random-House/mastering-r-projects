@@ -11,29 +11,27 @@ bookdown$print_install.packages_command <- function(pkgs){
     ))
 }
 
-bookdown$print_package_info_table <- function(pkgs){
+bookdown$print_package_info_table <- function(pkgs) return(
     # Note! chunk options should be: {r, echo = FALSE, results = "asis", cache = FALSE}
-    bookdown$create_package_info_table(pkgs) %>%
-        knitr::kable(format = "markdown", row.names = FALSE)
-}
+    pkgs
+    %>% bookdown$create_package_info_table()
+    %>% knitr::kable(format = "markdown", row.names = FALSE)
+)
 
-bookdown$create_package_info_table <- function(pkgs){
-    package_info <- function(pkg) 
-        packageDescription(pkg, fields = c("Package", "Version", "Title")) %>% 
-        unlist() %>% 
-        t() %>% 
-        as.data.frame() %>% 
-        dplyr::rename(Description = Title) 
-    
-    invisible(sapply(pkgs, package_info) %>% t())
-}
+bookdown$create_package_info_table <- function(pkgs) return(
+    # Note! chunk options should be: {r, echo = FALSE, results = "asis", cache = FALSE}
+    pkgs
+    %>% bookdown$create_package_info_table()
+    %>% knitr::kable(format = "markdown", row.names = FALSE)
+)
+
 
 bookdown$get_imports <- function() return(
     desc::description$new()$get_deps()  
     %>% subset(type %in% "Imports", select = "package", drop = TRUE)  
     %>% sort()
 )  
-    
+
 bookdown$dir_tree <- function(path){
     fs::dir_tree(path, recurse = TRUE)
 }    

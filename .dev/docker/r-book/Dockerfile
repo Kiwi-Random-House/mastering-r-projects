@@ -1,5 +1,5 @@
 # R Package Development: Book --------------------------------------------------
-FROM rocker/tidyverse
+FROM rocker/tidyverse:4.0.4
 
 # Setup ------------------------------------------------------------------------
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \

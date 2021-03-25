@@ -74,57 +74,15 @@ assign(".Rprofile", new.env(), envir = globalenv())
     .Rprofile$utils$run_script(path_script, job_name)
 }
 
-# pkgdown -----------------------------------------------------------------
-.Rprofile$pkgdown$browse <- function(name){
-    if(missing(name)){
-        path <- "./docs"
-        name <- "index.html"
-    } else {
-        path <- "./docs/articles"
-        name <- match.arg(name, list.files(path, "*.html"))
-    }
-    try(browseURL(stringr::str_glue('{path}/{name}', path = path, name = name)))
-    invisible()
-}
-
-.Rprofile$pkgdown$create <- function(){
-    path_script <- tempfile("system-", fileext = ".R")
-    job_name <- "Rendering Package Website"
-    
-    writeLines(c(
-        "devtools::document()",
-        "rmarkdown::render('README.Rmd', 'md_document')",
-        "unlink(usethis::proj_path('docs'), TRUE, TRUE)",
-        paste0("try(detach('package:",read.dcf("DESCRIPTION", "Package")[[1]], "', unload = TRUE, force = TRUE))"),
-        "pkgdown::build_site(devel = FALSE, lazy = FALSE)"
-    ), path_script)
-    
-    .Rprofile$utils$run_script(path_script, job_name)
-}
-
-.Rprofile$pkgdown$update <- function(){
-    path_script <- tempfile("system-", fileext = ".R")
-    job_name <- "Rendering Package Website"
-    
-    writeLines(c(
-        "devtools::document()",
-        "rmarkdown::render('README.Rmd', 'md_document')",
-        paste0("try(detach('package:",read.dcf("DESCRIPTION", "Package")[[1]], "', unload = TRUE, force = TRUE))"),
-        "pkgdown::build_site(devel = TRUE, lazy = TRUE)"
-    ), path_script)
-    
-    .Rprofile$utils$run_script(path_script, job_name)
-}
-
 # bookdown ----------------------------------------------------------------
-.Rprofile$bookdown$browse <- function(){
+.Rprofile$bookdown$browse_book <- function(){
     path <- "./_book"
     name <- "index.html"
     try(browseURL(stringr::str_glue('{path}/{name}', path = path, name = name)))
     invisible()
 }
 
-.Rprofile$bookdown$create <- function(output_format = "gitbook"){
+.Rprofile$bookdown$render_book <- function(output_format = "gitbook"){
     output_format <- match.arg(output_format, c("gitbook", "pdf_book"))
     path_script <- tempfile("system-", fileext = ".R")
     job_name <- "Rendering Book"
@@ -150,7 +108,9 @@ assign(".Rprofile", new.env(), envir = globalenv())
     .Rprofile$utils$run_script(path_script, job_name, workingDir = usethis::proj_get())
 }
 
-
+.Rprofile$bookdown$test_book <- function(){
+    .Rprofile$docker$restart("r-test")
+}
 
 # Utils -------------------------------------------------------------------
 .Rprofile$utils$run_script <- function(path, name, workingDir = "."){
