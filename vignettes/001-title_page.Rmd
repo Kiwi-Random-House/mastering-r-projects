@@ -1,4 +1,3 @@
-`r if (knitr::is_latex_output()) '# Title Page {-}'`
 `r if (knitr::is_html_output()) '# Welcome {-}'`
 
 ```{r cover-image, cache = FALSE, out.width = "100%"} 
@@ -22,6 +21,7 @@ Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/), i.e.
 public domain.
 
 `r if (knitr::is_latex_output()) '-->'`
+\newpage
 
 ## Colophon {-}
 
