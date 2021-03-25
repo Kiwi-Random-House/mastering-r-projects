@@ -312,7 +312,7 @@ sampler$fit <- purrr::map2(sampler$splits, sampler$mdl, predict_model)
 # Step 4: Bind MPG distribution objects with cars specification
 (
   tibble::as_tibble(mtcars, rownames = "model") %>% dplyr::select(-mpg)
-  %>% dplyr::left_join(mpg_distribution) 
+  %>% dplyr::left_join(mpg_distribution, by = "model") 
   %>% dplyr::select(model, mpg, dplyr::everything()) 
 )
 ```
@@ -341,7 +341,7 @@ distribution](https://en.wikipedia.org/wiki/Gamma_distribution) to the data
 # Bind mpg distribution objects with cars specification
 (
   tibble::as_tibble(mtcars, rownames = "model") %>% dplyr::select(-mpg)
-  %>% dplyr::left_join(mpg_distribution) 
+  %>% dplyr::left_join(mpg_distribution, by = "model") 
   %>% dplyr::select(model, mpg, dplyr::everything()) 
   %>% dplyr::filter(model %in% c("Mazda RX4", "Datsun 710"))
 )
