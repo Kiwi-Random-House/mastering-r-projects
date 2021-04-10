@@ -7,7 +7,7 @@ URL:
     https://r-projects.netlify.app/,
     https://github.com/Kiwi-Random-House/mastering-r-projects
 Version: 0.0.1
-Date: 2021-02-15
+Date: 2021-03-31
 Authors@R: 
     c(person(given = "Harel", 
              family = "Lustiger", 
