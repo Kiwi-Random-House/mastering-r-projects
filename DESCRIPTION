@@ -1,10 +1,10 @@
 Package: bookshelf
 Type: Package
-Title: Building Analytic Apps with R
+Title: Mastering R Projects
 Subtitle: Minimize the lifetime cost of the project and maximize data scientists' productivity
 Description: Performing data analysis in R is the intent behind its creation. This book details an approach for structuring and developing analysis projects in R.
 URL: 
-    https://r-projects.netlify.app/,
+    https://mastering-r-projects.netlify.app/,
     https://github.com/Kiwi-Random-House/mastering-r-projects
 Version: 0.0.1
 Date: 2021-03-31
