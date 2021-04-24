@@ -14,6 +14,8 @@ link-citations: yes
 graphics: yes
 always_allow_html: yes
 cover-image: "images/cover.png"
+apple-touch-icon: "../inst/favicon/apple-touch-icon-120x120.png"
+apple-touch-icon-size: 120
 favicon:     "../inst/favicon/favicon.ico"
 ---
 
