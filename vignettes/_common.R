@@ -1,13 +1,22 @@
-suppressWarnings(withr::with_dir(
-    usethis::proj_get(),
-    pkgload::load_all(export_all = !FALSE, helpers = FALSE, quiet = TRUE, warn_conflicts = FALSE)
-))
+withr::with_options(list(usethis.quiet = TRUE), usethis::proj_set())
+if(is.null(pkgload::pkg_ns())) suppressMessages(pkgload::load_all(export_all = !FALSE, helpers = FALSE, quiet = TRUE, warn_conflicts = FALSE))
+requireNamespace("printr", quietly = TRUE)
+
 
 # global options ----------------------------------------------------------
 options(
+    lubridate.week.start = 1, # 1 = Monday, 7 = Sunday
     tidyverse.quiet = TRUE,
-    usethis.quiet = TRUE
+    usethis.quiet = TRUE,
+    digits = 3
 )
+
+
+# ggplot2 -----------------------------------------------------------------
+library(ggplot2)
+ggplot2::theme_set(ggplot2::theme_bw())
+ggplot2::theme_update(legend.position='top', legend.justification='left', legend.direction='horizontal')
+
 
 # knitr -------------------------------------------------------------------
 knitr::opts_chunk$set(

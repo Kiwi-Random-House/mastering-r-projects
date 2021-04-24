@@ -15,21 +15,13 @@ rmd_files: [
     # Front matter
     "index.Rmd",
     #"004-preface.Rmd",
-    # "007-introduction.Rmd",
+    #"007-introduction.Rmd",
     # Part I: Background
-    "100-background.Rmd",
-    # "101-waste_management.Rmd",
-    # "102-software_design.Rmd",
-    #"102-running_example.Rmd",
-    #"103-principles.Rmd",
-    #"104-data_sources.Rmd",
-    # Part II: Design
-    #"200-design.Rmd",
-    #"201-domain_modelling.Rmd",
-    #"202-data_access_object.Rmd",
+    # "100-part-1.Rmd",
+    # Part II: Practices
+    "200-part-2.Rmd",
+    "201-predict_distibutions_over_point_estimates.Rmd",
     # Back matter
     "900-appendices.Rmd",
-    # "901-r_projects_guide.Rmd",
-    #"901-data_description.Rmd",
     "999-references.Rmd"
 ]

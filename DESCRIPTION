@@ -1,13 +1,13 @@
 Package: bookshelf
 Type: Package
-Title: Building Analytic Apps with R
+Title: Mastering R Projects
 Subtitle: Minimize the lifetime cost of the project and maximize data scientists' productivity
 Description: Performing data analysis in R is the intent behind its creation. This book details an approach for structuring and developing analysis projects in R.
 URL: 
     https://mastering-r-projects.netlify.app/,
     https://github.com/Kiwi-Random-House/mastering-r-projects
-Version: 0.0.1
-Date: 2021-02-15
+Version: 0.0.2
+Date: 2021-03-31
 Authors@R: 
     c(person(given = "Harel", 
              family = "Lustiger", 
@@ -21,13 +21,18 @@ RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE, r6 = TRUE)
 Language: en-GB
 Depends: 
-    R (>= 3.6),
-    bookdown (>= 0.17.0),
-    tidyverse (>= 1.3.0)
+    R (>= 3.6)
 Suggests: 
-    usethis,
+    bookdown,
+    broom,
+    printr,
     testthat,
+    tidyverse,
+    usethis,
     withr
 Imports: 
-    purrr
+    distributional,
+    MASS,
+    purrr,
+    rsample
 Config/testthat/edition: 3

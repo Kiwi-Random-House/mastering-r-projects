@@ -10,7 +10,7 @@ bookdown::gitbook:
       collapse: section
       scroll_highlight: yes
       before: |
-        <li><a href="./">Building Analytic Apps with R</a></li>
+        <li><a href="./">Mastering R Projects</a></li>
       after: []
     toolbar:
       position: fixed
@@ -33,7 +33,7 @@ bookdown::gitbook:
 
 bookdown::pdf_book:
   includes:
-    in_header: preamble.tex
+    in_header: latex/preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: no

@@ -1,5 +1,5 @@
 
-# Building Analytic Apps with R
+# Mastering R Projects
 
 Minimize the lifetime cost of the project and maximize data scientists’
 productivity
@@ -13,8 +13,6 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 Version](https://img.shields.io/badge/book%20website-live-0087BD.svg)](https://mastering-r-projects.netlify.app/)
 [![R build
 status](https://github.com/Kiwi-Random-House/mastering-r-projects/workflows/bookdown/badge.svg)](https://github.com/Kiwi-Random-House/mastering-r-projects/actions?query=workflow%3Abookdown)
-[![Netlify
-Status](https://api.netlify.com/api/v1/badges/e8cad689-17f5-49cb-ae8c-1be87f892777/deploy-status)](https://app.netlify.com/sites/mastering-r-projects/deploys)
 <!-- badges: end -->
 
 ------------------------------------------------------------------------

@@ -1,4 +1,3 @@
-`r if (knitr::is_latex_output()) '# Title Page {-}'`
 `r if (knitr::is_html_output()) '# Welcome {-}'`
 
 ```{r cover-image, cache = FALSE, out.width = "100%"} 
@@ -23,6 +22,7 @@ public domain.
 
 `r if (knitr::is_latex_output()) '-->'`
 
+`r if (knitr::is_latex_output()) '\\newpage'`
 ## Colophon {-}
 
 This version of the book was built with `r R.version.string` and the following
@@ -36,4 +36,9 @@ df <- data.frame(
   source = gsub("@", "\\\\@", pkgs$source)
 )
 knitr::kable(df, format = "markdown")
+```
+
+You can install all of the packages at once by running:
+
+```{r code = bookdown$print_install.packages_command(pkgs$package), echo = TRUE, eval = FALSE}
 ```
