@@ -1,3 +1,9 @@
-`r if (knitr::is_html_output()) '
+---
+bibliography: [../inst/REFERENCES.bib]
+biblio-style: apalike
+link-citations: yes
+---
+
 # References {-}
-'`
+
+<div id="refs"></div>

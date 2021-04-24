@@ -21,8 +21,8 @@ Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/), i.e.
 public domain.
 
 `r if (knitr::is_latex_output()) '-->'`
-\newpage
 
+`r if (knitr::is_latex_output()) '\\newpage'`
 ## Colophon {-}
 
 This version of the book was built with `r R.version.string` and the following
@@ -36,4 +36,9 @@ df <- data.frame(
   source = gsub("@", "\\\\@", pkgs$source)
 )
 knitr::kable(df, format = "markdown")
+```
+
+You can install all of the packages at once by running:
+
+```{r code = bookdown$print_install.packages_command(pkgs$package), echo = TRUE, eval = FALSE}
 ```
