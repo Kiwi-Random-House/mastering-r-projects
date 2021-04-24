@@ -14,8 +14,9 @@ link-citations: yes
 graphics: yes
 always_allow_html: yes
 cover-image: "images/cover.png"
-favicon:     "favicon.ico"
+favicon:     "../inst/favicon/favicon.ico"
 ---
 
 ```{r child = '001-title_page.Rmd'}
 ```
+

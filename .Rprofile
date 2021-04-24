@@ -3,22 +3,17 @@ assign(".Rprofile", new.env(), envir = globalenv())
 # .First ------------------------------------------------------------------
 .First <- function(){
     try(if(testthat::is_testing()) return())
-    
+
     # Package Management System
     Date <- as.character(read.dcf("DESCRIPTION", "Date"));
     URL <- if(is.na(Date)) "https://cran.rstudio.com/" else paste0("https://mran.microsoft.com/snapshot/", Date)
     options(repos = URL)
-    
-    
-    # Programming Logic
-    pkgs <- c("usethis", "devtools", "testthat")
-    # invisible(sapply(pkgs, require, warn.conflicts = FALSE, character.only = TRUE))
 }
 
 # .Last -------------------------------------------------------------------
 .Last <- function(){
     try(if(testthat::is_testing()) return())
-    
+
     unlink("./renv", recursive = TRUE)
     try(system('docker-compose down'), silent = TRUE)
 }
@@ -86,7 +81,7 @@ assign(".Rprofile", new.env(), envir = globalenv())
     output_format <- match.arg(output_format, c("gitbook", "pdf_book"))
     path_script <- tempfile("system-", fileext = ".R")
     job_name <- "Rendering Book"
-    
+
     writeLines(c(
         "temp_dir <<- tempfile('bookdown-')",
         "if(fs::dir_exists(temp_dir)) fs::dir_delete(temp_dir)",
@@ -97,14 +92,15 @@ assign(".Rprofile", new.env(), envir = globalenv())
         "fs::file_copy(files, file.path(temp_dir, gsub('^\\\\./', '', files)))",
         "message('--> Rendering files')",
         "withr::with_dir(file.path(temp_dir, 'vignettes'), {",
-        paste0("bookdown::render_book('index.Rmd', output_format = 'bookdown::", output_format,"', output_dir = '../_book', quiet = TRUE)"), 
+        paste0("bookdown::render_book('index.Rmd', output_format = 'bookdown::", output_format,"', output_dir = '../_book', quiet = TRUE)"),
         "})",
         "message('--> Retrieving book from temp location')",
-        "if(fs::dir_exists('_book')) fs::dir_delete('_book')",
-        "fs::dir_copy(file.path(temp_dir, '_book'), getwd())", 
+        "try(fs::dir_delete('_book'), silent = TRUE)",
+        "dir.create('_book', TRUE, TRUE)",
+        "fs::dir_copy(file.path(temp_dir, '_book'), getwd())",
         "message('--> Done!')"),
         path_script)
-    
+
     .Rprofile$utils$run_script(path_script, job_name, workingDir = usethis::proj_get())
 }
 
