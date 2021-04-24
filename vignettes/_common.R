@@ -1,7 +1,5 @@
-suppressWarnings(withr::with_dir(
-    usethis::proj_get(),
-    pkgload::load_all(export_all = !FALSE, helpers = FALSE, quiet = TRUE, warn_conflicts = FALSE)
-))
+withr::with_options(list(usethis.quiet = TRUE), usethis::proj_set())
+if(is.null(pkgload::pkg_ns())) pkgload::load_all(export_all = !FALSE, helpers = FALSE, quiet = TRUE, warn_conflicts = FALSE)
 
 # global options ----------------------------------------------------------
 options(

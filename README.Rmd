@@ -23,7 +23,6 @@ source(file.path(usethis::proj_get(), "vignettes",  "_common.R"))
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Published Version](https://img.shields.io/badge/book%20website-live-0087BD.svg)](https://mastering-r-projects.netlify.app/)
 [![R build status](https://github.com/Kiwi-Random-House/mastering-r-projects/workflows/bookdown/badge.svg)](https://github.com/Kiwi-Random-House/mastering-r-projects/actions?query=workflow%3Abookdown)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e8cad689-17f5-49cb-ae8c-1be87f892777/deploy-status)](https://app.netlify.com/sites/mastering-r-projects/deploys)
 <!-- badges: end -->
 
 ---

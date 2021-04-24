@@ -1,16 +1,5 @@
 services:
   ######################################################
-  # R Book
-  ######################################################
-  r-book:
-    image: tidylab/book:4.0.4
-    build:
-      context: ./
-      dockerfile: ./.dev/docker/r-book/Dockerfile
-    entrypoint: '/bin/bash'
-    container_name: r_book
-    restart: "no"
-  ######################################################
   # R Testing
   ######################################################
   r-test:
