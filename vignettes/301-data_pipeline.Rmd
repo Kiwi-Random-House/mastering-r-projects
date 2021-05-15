@@ -1,0 +1,64 @@
+---
+bibliography: [../inst/REFERENCES.bib]
+editor_options: 
+  markdown: 
+    wrap: 80
+---
+
+<!-- Why? Problem Statement -->
+
+<!--# 
+* Top-down vs bottom-up design
+* from raw data to rda file
+    * using list
+    * using git LFS
+* implementing business logic
+* The data ingestions strategy has three stages: (Imagine json file)
+    * Importing raw data, rudimentary data treatment, exporting data (to ./data as rda file)
+    * Loading package/project data (rda file), (applying business rules)
+    * Building data pipeline:  
+* Rudimentary data treatment:
+    * Standardise column names
+    * Subset large datasets (feature selection and/or row sampling)
+    * Cast the variable types
+    * Remove duplications
+    * Detect and Correct or Remove corrupt or inaccurate records from a dataset 
+-->
+
+# Data Pipeline
+
+```{r, include = FALSE}
+source(file.path(usethis::proj_get(), "vignettes",  "_common.R"))
+```
+
+This chapter demonstrates how to process data that is necessary for the
+application at hand. At the process outset, there are one or more data sources.
+At its end, there is a data storage that can be accessed, used and analysed by
+data scientists. The end solution comprises two elements, a data and a function,
+both stored inside the R project.
+
+The form of the solution is
+
+```{r, echo=TRUE, eval=FALSE}
+tidy_data <- treat_data(raw_data)
+```
+
+GIVEN, WHEN, THEN?
+
+## Data Strategy
+
+```{r analytic-data-pipeline, cache = FALSE, out.width = "100%"} 
+knitr::include_graphics("https://i.imgur.com/t86vF2n.png", dpi = NA)
+```
+
+The operations of an analytic data pipeline can be grouped into three stages:
+
+* Data engineering;
+* Data preparation; and
+* Analytics
+
+
+## Data Engineering
+
+```{r, echo=TRUE, cache=TRUE}
+```
