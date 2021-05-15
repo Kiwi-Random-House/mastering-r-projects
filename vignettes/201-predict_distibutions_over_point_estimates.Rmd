@@ -140,7 +140,7 @@ print(mpg_dist)
 warning("By using the normal distribution, a random variable of **any length** can be summarised by **two parameters**, the sample mean and standard deviation.")
 ```
 
-A **distribution object** allows us to move a from `data.frame` with point
+A **distribution object** allows us to move from a `data.frame` that has a point
 estimate column into a `data.frame` with a distribution column. For example,
 instead of compressing the 'mpg' measurements of each car in the 'mtcars'
 dataset into point estimations (the sample mean)
