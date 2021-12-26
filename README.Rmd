@@ -28,7 +28,7 @@ source(file.path(usethis::proj_get(), "vignettes",  "_common.R"))
 ---
 
 ```{r cover-image, cache = FALSE, out.width = "100%"} 
-knitr::include_graphics(usethis::proj_path('vignettes', 'images', 'cover.png'), dpi = NA)
+knitr::include_graphics("https://github.com/Kiwi-Random-House/mastering-r-projects/blob/master/vignettes/images/cover.png?raw=true", dpi = NA)
 ```
 
 ## Synopsis
