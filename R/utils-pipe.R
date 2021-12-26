@@ -1,9 +1,9 @@
 #' Pipe operator
 #'
-#' @name %>%
+#' @name |>
 #' @rdname pipe
 #' @keywords internal
 #' @export
-#' @importFrom purrr %>%
+#' @importFrom purrr |>
 #' @usage lhs \%>\% rhs
 NULL

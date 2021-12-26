@@ -74,7 +74,7 @@ housing market.
 
 ```{r generate_synthetic_data-exec, echo=TRUE, results='markup'}
 set.seed(1356)
-generate_synthetic_data(n = 100) %>% head()
+generate_synthetic_data(n = 100) |> head()
 ```
 
 
