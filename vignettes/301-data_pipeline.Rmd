@@ -20,7 +20,7 @@ editor_options:
 * Rudimentary data treatment:
     * Standardise column names
     * Subset large datasets (feature selection and/or row sampling)
-    * Cast the variable types
+    * Cast the variable types (via mutate, across and identity)
     * Remove duplications
     * Detect and Correct or Remove corrupt or inaccurate records from a dataset 
 -->
@@ -61,4 +61,7 @@ The operations of an analytic data pipeline can be grouped into three stages:
 ## Data Engineering
 
 ```{r, echo=TRUE, cache=TRUE}
+github_url <- "https://raw.githubusercontent.com"
+github_slug <- "mockdb/Rdatasets/master/csv/nycflights13/flights.csv"
+url <- paste0(github_url, "/", github_slug)
 ```
