@@ -1,0 +1,85 @@
+# Data Sources {#data-sources}
+
+## Introduction
+
+Any analytic project needs access to data. The location (electronic address) or
+mechanism from which data originates or can be obtained is called a *data
+source*. This definition suggests data sources vary in their origins and their
+storage mechanisms. First, data may originate organically, from measuring
+instruments that record real-data or generated syntactically to fit a specific
+purpose. Second, data may be stored inside a database, a flat-file, a website,
+or an API.
+
+The choice of what data source to use in our analytic application is taken with
+regards to two major qualities: *accessibility* and *usefulness*. Given an
+existing data source, accessibility is the degree of how easy it is to obtain
+(access to) it. Accessibility is mainly impacted by company policy (regulation,
+security protocols, etc.) and the availability and willingness of people we are
+dependent on, mainly database administrators and data engineers, to respond to
+our data access requests. Usefulness is the degree of having practical worth or
+applicability. Usefulness is determined by circumstances combined with the goal
+we are trying to achieve.
+
+Among the two data source qualities: accessibility and usefulness, the latter
+should lead our choice of a data source. The following sections describe common
+goals and circumstances of analytic projects and propose appropriate data
+sources.
+
+## Data Source Usefulness
+
+In [chapter 1](#intro), we decomposed the process of building analytic
+applications into two realms: software development and data analytics. Following
+that decomposition, we argue that having two data sources, one for each realm is
+appropriate for many analytic projects. We begin by identifying the role of data
+in each realm. Then, we infer what are the desirable or necessary attributes of
+the data source in each realm. Finally, we demonstrate the proposed data sources
+in our running example.
+
+We start with data analytics as it requires the least explanations. Data
+analytics is the science of analyzing data in order to make conclusions about
+that information, i.e. actionable insights. Examples of data analytics
+activities include data exploration and (predictive) model selection. Obviously,
+when modelling the real-world, there is no substitute for real data.
+Nevertheless, a representative sample of the data is sufficient and even
+preferable in many analytic projects.
+
+In our context, a representative sample is a subset of a data source that seeks
+to accurately reflect the data source. Representative samples tend to contain a
+subspace of the domain or a snapshot of the domain at a given time. That means
+that if we turn the representative sample into actionable insights, then adding
+more spatial/temporal data to the representative sample would give similar
+insights.
+
+Representative samples can be stored in flat files of modest sizes. The file
+size attribute is desirable. Loading gigabytes of information every time an R
+session begins is both slow and memory-intensive action. Moreover, applying
+transformation on the loaded data may result in copies that would consume more
+memory.
+
+---
+
+The following code demonstrates a syntactic data source implementation for the
+running example. Notice, that the syntactic dataset captures our current
+knowledge of the house prices domain. It has an identifier column (Id), salient
+features (Bedrooms and Bathrooms) that must exist in the real application, and a
+target variable (SalePrice). The content of the dataset holds true information
+to the extent necessary for software development activities. For example, as you
+would expect, SalePrice is a numeric variable with non-negative values. However,
+there is no attempt (at this stage) to fake values resembling prices in the real
+housing market.
+
+```{r code = readLinesR("generate_synthetic_data.R"), echo = TRUE, eval = FALSE}
+```
+
+
+```{r generate_synthetic_data-exec, echo=TRUE, results='markup'}
+set.seed(1356)
+generate_synthetic_data(n = 100) %>% head()
+```
+
+
+## Data Source Accessibility
+
+## The Common Case
+
+## Conclusions

@@ -21,6 +21,9 @@ rmd_files: [
     # Part II: Practices
     "200-part-2.Rmd",
     "201-predict_distibutions_over_point_estimates.Rmd",
+    # Part III: Applications
+    "300-part-3.Rmd",
+    "301-data_pipeline.Rmd",
     # Back matter
     "900-appendices.Rmd",
     "999-references.Rmd"
