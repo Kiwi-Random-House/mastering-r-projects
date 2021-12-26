@@ -1,6 +1,5 @@
 withr::with_options(list(usethis.quiet = TRUE), usethis::proj_set())
 if(is.null(pkgload::pkg_ns())) suppressMessages(pkgload::load_all(export_all = !FALSE, helpers = FALSE, quiet = TRUE, warn_conflicts = FALSE))
-requireNamespace("printr", quietly = TRUE)
 
 
 # global options ----------------------------------------------------------

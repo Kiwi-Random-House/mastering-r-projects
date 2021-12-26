@@ -1,5 +1,5 @@
 output_dir: "_book"
-book_filename: "building-analytic-apps-with-r.md"
+book_filename: "Mastering-R-Projects-1st-edition.md"
 delete_merged_file: true
 new_session: yes
 language:
