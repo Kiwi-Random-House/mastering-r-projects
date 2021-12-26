@@ -1,4 +1,4 @@
 library(testthat)
-library(bookshelf)
+library(mastering.r.projects)
 
-test_check("bookshelf")
+test_check("mastering.r.projects")

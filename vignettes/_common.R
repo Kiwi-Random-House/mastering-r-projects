@@ -41,25 +41,27 @@ knitr::opts_chunk$set(
 knitr::knit_hooks$set(
     error = function(x, options) {
         paste('\n\n<div class="alert alert-danger">',
-              x %>%
-                  stringr::str_replace_all('^.*:', '**Caution:**') %>%
-                  stringr::str_replace_all('#> ', '\n'),
+              x
+              %>% stringr::str_replace_all('^.*:', '**Caution:**')
+              %>% stringr::str_replace_all('#> ', '\n'),
               '</div>', sep = '\n')
     },
     warning = function(x, options) {
         paste('\n\n<div class="alert alert-warning">',
-              x %>%
-                  stringr::str_replace_all('##', '\n') %>%
-                  stringr::str_replace_all('^#>\ Warning:', '**Note:**') %>%
-                  stringr::str_remove_all("#>"),
+              x 
+              %>% stringr::str_replace_all('##', '\n')
+              %>% stringr::str_replace_all('^#>\ Warning:', '**Note:**')
+              %>% stringr::str_remove_all("#>"),
               '</div>', sep = '\n')
     },
     message = function(x, options) {
         paste('\n\n<div class="alert alert-info">',
-              gsub('##|#>', '\n', paste("**Tip:**", x)),
+              x
+              %>% stringr::str_replace_all('##|#>', '\n**Tip:**'),
               '</div>', sep = '\n')
     }
 )
+
 
 # rmarkdown ---------------------------------------------------------------
 kable <- knitr::kable
