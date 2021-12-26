@@ -14,8 +14,8 @@ bookdown$print_install.packages_command <- function(pkgs){
 bookdown$print_package_info_table <- function(pkgs) return(
     # Note! chunk options should be: {r, echo = FALSE, results = "asis", cache = FALSE}
     pkgs
-    %>% bookdown$create_package_info_table()
-    %>% knitr::kable(format = "markdown", row.names = FALSE)
+    |> bookdown$create_package_info_table()
+    |> knitr::kable(format = "markdown", row.names = FALSE)
 )
 
 bookdown$create_package_info_table <- function(pkgs){
@@ -25,8 +25,8 @@ bookdown$create_package_info_table <- function(pkgs){
 
 bookdown$get_imports <- function() return(
     desc::description$new()$get_deps()
-    %>% subset(type %in% "Imports", select = "package", drop = TRUE)
-    %>% sort()
+    |> subset(type %in% "Imports", select = "package", drop = TRUE)
+    |> sort()
 )
 
 bookdown$dir_tree <- function(path){

@@ -17,7 +17,7 @@ status](https://github.com/Kiwi-Random-House/mastering-r-projects/workflows/book
 
 ------------------------------------------------------------------------
 
-<img src="G:/Shared drives/Development/publications/mastering-r-projects/vignettes/images/cover.png" width="100%" style="display: block; margin: auto;" />
+<img src="https://github.com/Kiwi-Random-House/mastering-r-projects/blob/master/vignettes/images/cover.png?raw=true" width="100%" style="display: block; margin: auto;" />
 
 ## Synopsis
 
